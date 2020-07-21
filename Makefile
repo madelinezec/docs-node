@@ -23,7 +23,7 @@ help: ## Show this help message
 	@echo 'Variables'
 	@printf "  \033[36m%-18s\033[0m %s\n" 'ARGS' 'Arguments to pass to mut-publish'
 	
-next-gen-publish: next-gen-html
+next-gen-publish:
 	@curl https://raw.githubusercontent.com/mongodb/docs-worker-pool/meta/publishedbranches/docs-node.yaml > ${REPO_DIR}/published-branches.yaml
 	next-gen-html;
 	echo "PATH_PREFIX=${PREFIX}/${GIT_BRANCH}" >> .env.production; \
@@ -60,5 +60,12 @@ deploy-search-index: ## Update the search index for this branch
 	@echo "Building search index"
 	mut-index upload build/public -o ${PROJECT}-${GIT_BRANCH}.json -u ${PRODUCTION_URL}/${PROJECT} -g -s --exclude build/public/sdk/iOS
 
+%:
+	@:
 
-
+test:
+    if [ $(filter-out $@,$(MAKECMDGOALS)) = hi ]; \
+        echo "WON"; \
+    else \
+        echo "LOST"; \
+    fi
