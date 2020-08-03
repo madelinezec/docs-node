@@ -21,8 +21,6 @@ MongoDB Node Driver
 
 Introduction
 ------------
-Test tests test test
-
 Test!
 
 TEST
