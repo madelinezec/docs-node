@@ -21,7 +21,7 @@ MongoDB Node Driver
 
 Introduction
 ------------
-TEST DEPLOY AUG11!
+test deploy aug 25
 
 The official MongoDB Node.js driver allows Node.js applications to
 connect to MongoDB and work with data. The driver features an asynchronous
